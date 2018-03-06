@@ -1,5 +1,8 @@
 # Easy Logger for Java and Kotlin
 
+[![Release](https://jitpack.io/v/stasbar/easy-logger.svg)]
+(https://jitpack.io/#stasbar/easy-logger)
+
 ## Usage:
 ### Debug
 `Logger.d("Start loading...")`
