@@ -8,23 +8,34 @@ object Logger {
     private val dateFormat = SimpleDateFormat("HH:mm:ss", Locale.getDefault())
 
     @JvmStatic
+    fun info(tag : String?, obj: Any?) {
+        print(tag,obj, "INFO", Text.ANSI_CYAN, "ℹ")
+    }
+    @JvmStatic
     fun info(obj: Any?) {
-        print(obj, "INFO", Text.ANSI_CYAN, "ℹ")
+        print(null,obj, "INFO", Text.ANSI_CYAN, "ℹ")
     }
 
+    @JvmStatic
+    fun err(tag : String,obj: Any?) {
+        print(tag,obj, "ERROR", Text.ANSI_RED, "❗")
+    }
     @JvmStatic
     fun err(obj: Any?) {
-        print(obj, "ERROR", Text.ANSI_RED, "❗")
+        print(null,obj, "ERROR", Text.ANSI_RED, "❗")
     }
 
     @JvmStatic
-    fun d(obj: Any?) {
-        print(obj, "DEBUG", Text.ANSI_GREEN, "\uD83D\uDC1B")
+    fun d(tag : String,obj: Any?) {
+        print(tag,obj, "DEBUG", Text.ANSI_GREEN, "\uD83D\uDC1B")
     }
-
-    private fun print(obj: Any?, tag: String, color: String, icon: String) {
+    @JvmStatic
+    fun d(obj: Any?) {
+        print(null,obj, "DEBUG", Text.ANSI_GREEN, "\uD83D\uDC1B")
+    }
+    private fun print(tag : String?,obj: Any?, level: String, color: String, icon: String) {
         val time = dateFormat.format(Date(System.currentTimeMillis()))
-        println("\n$color$icon[$tag]$ANSI_RESET[$time] ${obj.toString()} \n")
+        println("$color$icon[$level]$ANSI_RESET[$time][${tag ?: ""}] ${obj.toString()}")
     }
 
 
