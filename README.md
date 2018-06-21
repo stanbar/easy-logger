@@ -15,8 +15,12 @@
 
 ### Info
 `Logger.info("Successfuly downloaded item")`
-
 >ℹ[INFO][20:12:38] Successfuly downloaded item
+
+You can also pass TAG argument which is `optional`
+for example
+`Logger.d("MainActivity", "Hello World !")`
+>🐛[DEBUG][20:08:28][MainActivity] Hello World !
 
 ## Dependency
 ### Gradle
@@ -34,12 +38,12 @@
 **Step 2.** Add the dependency
 ```gradle
 	dependencies {
-		compile 'com.github.stasbar:easy-logger:v1.0'
+	        implementation 'com.github.stasbar:easy-logger:1.2'
 	}
 ```
 ## Maven
 **Step 1.** Add the JitPack repository to your build file
-```markup
+```xml
 	<repositories>
 		<repository>
 		    <id>jitpack.io</id>
@@ -49,12 +53,13 @@
 ```
 
 **Step 2.** Add the dependency
-```markup
+```xml
 	<dependency>
 	    <groupId>com.github.stasbar</groupId>
 	    <artifactId>easy-logger</artifactId>
-	    <version>v1.0</version>
+	    <version>1.2</version>
 	</dependency>
+
 ```
 
 
